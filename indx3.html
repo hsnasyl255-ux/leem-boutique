@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leem Boutique | ليم بوتيك للأكواب الفاخرة</title>
+    <style>
+        :root {
+            --bg-main: #fcf9f6;
+            --primary-color: #5a1827;
+            --accent-gold: #c5a059;
+            --text-dark: #2c2c2c;
+            --text-gray: #666;
+            --card-bg: #ffffff;
+            --whatsapp-green: #25d366;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            scroll-behavior: smooth;
+        }
+
+        /* شريط العرض المؤقت */
+        .urgency-bar {
+            background: linear-gradient(90deg, #c5a059, #e0c283, #c5a059);
+            color: var(--primary-color);
+            padding: 9px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6px 15px;
+            font-size: 12px;
+        }
+
+        /* الهيدر الملكي */
+        header {
+            background-color: #ffffff;
+            padding: 15px 40px;
+            box-shadow: 0 4px 20px rgba(90, 24, 39, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .logo-text h2 {
+            margin: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            text-align: right;
+        }
+
+        .logo-text span {
+            font-size: 11px;
+            color: var(--text-gray);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-icon-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+
+        .cart-icon-btn:hover {
+            background-color: #722132;
+        }
+
+        /* خانة البحث */
+        .search-container {
+            max-width: 550px;
+            margin: 25px auto 10px auto;
+            padding: 0 15px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 13px 22px;
+            border-radius: 30px;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            background-color: white;
+            color: var(--text-dark);
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(90, 24, 39, 0.15);
+        }
+
+        /* واجهة الهيرو الفاخرة بدون صور */
+        .hero-section {
+            background: linear-gradient(135deg, #5a1827 0%, #7a2235 50%, #40101b 100%);
+            color: white;
+            padding: 70px 20px;
+            margin-bottom: 20px;
+            border-bottom: 4px solid var(--accent-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '☕ 🤍 ✨ 🌸 ☕';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            letter-spacing: 25px;
+            opacity: 0.2;
+        }
+
+        .hero-content-box {
+            max-width: 650px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 35px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-content-box h1 {
+            font-size: 28px;
+            color: #fff;
+            margin: 0 0 12px 0;
+            font-weight: bold;
+        }
+
+        .hero-content-box p {
+            font-size: 15px;
+            color: #f3e9e8;
+            margin: 0 0 20px 0;
+            line-height: 1.7;
+        }
+
+        .hero-btn {
+            background-color: var(--accent-gold);
+            color: var(--primary-color);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-btn:hover {
+            background-color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        /* شريط مميزات المتجر السريع (Trust Bar) */
+        .trust-bar {
+            background-color: white;
+            max-width: 1000px;
+            margin: 0 auto 35px auto;
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+            border: 1px solid #eae5df;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .trust-item span {
+            font-size: 20px;
+        }
+
+        /* شريط التصنيفات */
+        .categories-bar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 10px;
+            max-width: 1000px;
+            margin: 0 auto 25px auto;
+        }
+
+        .cat-pill {
+            background-color: white;
+            border: 1px solid var(--accent-gold);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .cat-pill:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* قسم قصة البوتيك (Our Story) */
+        .story-section {
+            max-width: 900px;
+            margin: 35px auto;
+            background: linear-gradient(135deg, #fffcf9, #f7efe6);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 30px 40px;
+            border-radius: 16px;
+            text-align: right;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+        }
+
+        .story-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 20px;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .story-section p {
+            color: var(--text-dark);
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 15px 0 0 0;
+        }
+
+        /* صندوق رسالة المفاجأة */
+        .surprise-message-card {
+            max-width: 900px;
+            margin: 25px auto;
+            background: linear-gradient(135deg, #ffffff, #fff5f7);
+            border: 2px dashed var(--primary-color);
+            padding: 22px 30px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(90, 24, 39, 0.08);
+            text-align: right;
+        }
+
+        .surprise-message-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .surprise-message-card p {
+            font-size: 14px;
+            color: var(--text-dark);
+            margin: 8px 0 0 0;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* شبكة المنتجات */
+        .container {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-align: right;
+            border-right: 4px solid var(--accent-gold);
+            padding-right: 10px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #eae5df;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: right;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 14px 32px rgba(90, 24, 39, 0.12);
+        }
+
+        .badge-hot {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary-color);
+            color: var(--accent-gold);
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 12px;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+        }
+
+        .product-price-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .color-select {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .card-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .add-to-cart-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 9px;
+            border-radius: 8px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #722132;
+        }
+
+        .fast-whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .fast-whatsapp-btn:hover {
+            background-color: #1ebe5d;
+        }
+
+        /* زر واتساب عائم وزر العودة للاعلى */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background-color: #25d366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 9999;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 90px;
+            left: 25px;
+            background-color: var(--accent-gold);
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 9998;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: white;
+        }
+
+        /* إشعار منبثق ناعم عند الإضافة (Toast) */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 12px;
+            position: fixed;
+            z-index: 3000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border: 1px solid var(--accent-gold);
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+
+        /* قسم العناية والآراء */
+        .info-sections {
+            max-width: 1100px;
+            margin: 45px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 0 15px;
+            text-align: right;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eae5df;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 18px;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 8px;
+        }
+
+        .info-card ul {
+            padding-right: 20px;
+            margin: 10px 0 0 0;
+            color: var(--text-gray);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .review-box {
+            font-style: italic;
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 13px;
+        }
+
+        /* وسائل التواصل الاجتماعي */
+        .social-section {
+            background-color: #f4eced;
+            padding: 30px 15px;
+            margin-top: 40px;
+            border-top: 1px solid #e0d5d7;
+            text-align: center;
+        }
+
+        .social-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            transition: 0.3s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .social-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* نافذة السلة */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: right;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+
+        .modal-content h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .cart-items-list {
+            max-height: 160px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .whatsapp-btn {
+            background-color: var(--whatsapp-green);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .close-modal {
+            background-color: #ddd;
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            width: 100%;
+            margin-top: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px 15px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="urgency-bar">
+        🔥 عرض لفترة محدودة: توصيل سريع لجميع مناطق القدس والضفة + هدية مفاجأة مع كل طلب! 🎁
+    </div>
+    <div class="top-bar">
+        🤍 الدفع عند الاستلام متاح لراحتكم وأمانكم 🤍
+    </div>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-circle">Leem</div>
+            <div class="logo-text">
+                <h2>Leem Boutique</h2>
+                <span>لكل كوب حكاية دافئة</span>
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#products-section">المتجر</a></li>
+            <li><a href="#story-section">قصتنا</a></li>
+            <li><a href="#reviews-section">الآراء</a></li>
+        </ul>
+
+        <div class="header-actions">
+            <button class="cart-icon-btn" onclick="toggleCart()">
+                🛒 السلة (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <!-- أزرار عائمة جانبية -->
+    <a href="https://wa.me/972547848314?text=مرحباً، أود الاستفسار عن الأكواب في Leem Boutique" class="floating-wa" target="_blank" title="تواصل معنا عبر واتساب">💬</a>
+    <a href="#" class="back-to-top" title="العودة للأعلى">⬆</a>
+
+    <!-- إشعار Toast منبثق -->
+    <div id="toast">تمت الإضافة إلى السلة بنجاح 🤍</div>
+
+    <!-- خانة البحث السريع -->
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="ابحثي عن كوبك المفضلة هنا..." id="searchInput" onkeyup="searchProducts()">
+    </div>
+
+    <!-- واجهة الهيرو النظيفة الفخمة -->
+    <div class="hero-section">
+        <div class="hero-content-box">
+            <h1>لأن كل لحظة دافئة تستحق تميزاً خاصاً 🤍</h1>
+            <p>تشكيلة فريدة مصممة بعناية فائقة من الأكواب الفاخرة، لترافق صباحاتكِ الهادئة وتكون الهدية الأجمل لمن تحبين.</p>
+            <button class="hero-btn" onclick="document.getElementById('products-section').scrollIntoView({behavior: 'smooth'})">تصفحي التشكيلة الآن ✨</button>
+        </div>
+    </div>
+
+    <!-- شريط الثقة والمميزات السريعة -->
+    <div class="trust-bar">
+        <div class="trust-item"><span>🎁</span> تغليف هدايا فاخر مجاناً</div>
+        <div class="trust-item"><span>🚚</span> توصيل سريع للقدس والضفة</div>
+        <div class="trust-item"><span>🛡️</span> دفع آمن عند الاستلام</div>
+    </div>
+
+    <!-- شريط التصنيفات -->
+    <div class="categories-bar">
+        <div class="cat-pill">🔥 الأكثر مبيعاً</div>
+        <div class="cat-pill">👥 أكواب الأصدقاء</div>
+        <div class="cat-pill">🎁 بوكسات الهدايا</div>
+        <div class="cat-pill">🌸 تصاميم حصرية</div>
+    </div>
+
+    <!-- قسم قصة البوتيك (Our Story) -->
+    <div class="story-section" id="story-section">
+        <h3>✨ قصة Leem Boutique</h3>
+        <p>بدأت رحلتنا من شغف عميق بالتفاصيل الصغيرة التي تضفي دفئاً حقيقياً على تفاصيل يومكِ. نحن نؤمن بأن كل كوب قهوة أو شاي ليس مجرد أداة، بل هو رفيق لصباحاتكِ الهادئة ولحظاتكِ الخاصة. لذلك نختار لكِ أرقى التصاميم وأجود أنواع السيراميك لتصلكِ كتحفة فنية فريدة، مرفقة دائماً برسالة دافئة تصنع يومكِ بكل حب.</p>
+    </div>
+
+    <!-- صندوق رسالة المفاجأة -->
+    <div class="surprise-message-card">
+        <h3>💌 مفاجأة Leem Boutique الخاصة بكِ:</h3>
+        <p>مع كل طلبية تطلبينها، سنقوم بإرفاق رسالة صباحية دافئة ومكتوبة خصيصاً بخط يدوي أنيق لتفاجئكِ وتصنع يومكِ بكل حب! 🤍</p>
+    </div>
+
+    <div class="container" id="products-section">
+        <div class="section-title">تشكيلة الأكواب المميزة</div>
+        
+        <div class="gallery" id="productGallery">
+            <!-- منتج 1 -->
+            <div class="product-card" data-name="طقم أكواب الفراولة المميز">
+                <div class="badge-hot">الأكثر طلباً 🔥</div>
+                <img src="images/A1.jpg" alt="صورة 1">
+                <div class="product-info">
+                    <div class="product-title">طقم أكواب الفراولة المميز</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 45</span>
+                        <span class="old-price">₪ 60</span>
+                    </div>
+                    <select class="color-select" id="color-1">
+                        <option value="وردي فستقي">اللون: وردي فستقي</option>
+                        <option value="أبيض كلاسيكي">اللون: أبيض كلاسيكي</option>
+                        <option value="بيج هادئ">اللون: بيج هادئ</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('طقم أكواب الفراولة المميز', 45, 'color-1')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('طقم أكواب الفراولة المميز', 45, 'color-1')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 2 -->
+            <div class="product-card" data-name="كوب ورد ربيعي أنيق">
+                <img src="images/A2.jpg" alt="صورة 2">
+                <div class="product-info">
+                    <div class="product-title">كوب ورد ربيعي أنيق</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 35</span>
+                        <span class="old-price">₪ 48</span>
+                    </div>
+                    <select class="color-select" id="color-2">
+                        <option value="زهري ناعم">اللون: زهري ناعم</option>
+                        <option value="أصفر مبهج">اللون: أصفر مبهج</option>
+                        <option value="أبيض سادة">اللون: أبيض سادة</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('كوب ورد ربيعي أنيق', 35, 'color-2')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('كوب ورد ربيعي أنيق', 35, 'color-2')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 3 -->
+            <div class="product-card" data-name="بوكس هدايا الأكواب الفاخرة">
+                <div class="badge-hot">هدية الموسم 🎁</div>
+                <img src="images/A3.jpg" alt="صورة 3">
+                <div class="product-info">
+                    <div class="product-title">بوكس هدايا الأكواب الفاخرة</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 48</span>
+                        <span class="old-price">₪ 65</span>
+                    </div>
+                    <select class="color-select" id="color-3">
+                        <option value="بوكس وردي مع شريطة">اللون: بوكس وردي مع شريطة</option>
+                        <option value="بوكس بيج ملكي">اللون: بوكس بيج ملكي</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('بوكس هدايا الأكواب الفاخرة', 48, 'color-3')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('بوكس هدايا الأكواب الفاخرة', 48, 'color-3')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 4 -->
+            <div class="product-card" data-name="كوب التوليب الوردي المبهج">
+                <img src="images/A4.jpg" alt="صورة 4">
+                <div class="product-info">
+                    <div class="product-title">كوب التوليب الوردي المبهج</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 30</span>
+                        <span class="old-price">₪ 40</span>
+                    </div>
+                    <select class="color-select" id="color-4">
+                        <option value="وردى فاتح">اللون: وردى فاتح</option>
+                        <option value="أبيض ناصع">اللون: أبيض ناصع</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('كوب التوليب الوردي المبهج', 30, 'color-4')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('كوب التوليب الوردي المبهج', 30, 'color-4')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 5 -->
+            <div class="product-card" data-name="طقم أكواب الصباح الدافئة">
+                <img src="images/A5.jpg" alt="صورة 5">
+                <div class="product-info">
+                    <div class="product-title">طقم أكواب الصباح الدافئة</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 40</span>
+                        <span class="old-price">₪ 55</span>
+                    </div>
+                    <select class="color-select" id="color-5">
+                        <option value="متعدد الألوان الزاهية">اللون: متعدد الألوان الزاهية</option>
+                        <option value="ألوان الباستيل الهادئة">اللون: ألوان الباستيل الهادئة</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('طقم أكواب الصباح الدافئة', 40, 'color-5')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('طقم أكواب الصباح الدافئة', 40, 'color-5')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 6 -->
+            <div class="product-card" data-name="كوب السيراميك الدانتيل">
+                <img src="images/A6.jpg" alt="صورة 6">
+                <div class="product-info">
+                    <div class="product-title">كوب السيراميك الدانتيل</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 35</span>
+                        <span class="old-price">₪ 45</span>
+                    </div>
+                    <select class="color-select" id="color-6">
+                        <option value="أبيض كلاسيكي">اللون: أبيض كلاسيكي</option>
+                        <option value="بيج عاجي">اللون: بيج عاجي</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('كوب السيراميك الدانتيل', 35, 'color-6')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('كوب السيراميك الدانتيل', 35, 'color-6')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 7 -->
+            <div class="product-card" data-name="كوب الدب الرقيق مع صحن">
+                <img src="images/A7.jpg" alt="صورة 7">
+                <div class="product-info">
+                    <div class="product-title">كوب الدب الرقيق مع صحن</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 42</span>
+                        <span class="old-price">₪ 58</span>
+                    </div>
+                    <select class="color-select" id="color-7">
+                        <option value="بني دافئ مع صحن">اللون: بني دافئ مع صحن</option>
+                        <option value="سكري لطيف">اللون: سكري لطيف</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('كوب الدب الرقيق مع صحن', 42, 'color-7')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('كوب الدب الرقيق مع صحن', 42, 'color-7')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 8 -->
+            <div class="product-card" data-name="مجموعة هدايا العناية والأكواب">
+                <img src="images/A8.jpg" alt="صورة 8">
+                <div class="product-info">
+                    <div class="product-title">مجموعة هدايا العناية والأكواب</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 50</span>
+                        <span class="old-price">₪ 70</span>
+                    </div>
+                    <select class="color-select" id="color-8">
+                        <option value="مجموعة الورد الجوري">اللون: مجموعة الورد الجوري</option>
+                        <option value="مجموعة اللافندر الهادئة">اللون: مجموعة اللافندر الهادئة</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('مجموعة هدايا العناية والأكواب', 50, 'color-8')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('مجموعة هدايا العناية والأكواب', 50, 'color-8')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 9 -->
+            <div class="product-card" data-name="كوب الزهور الزرقاء الملكية">
+                <img src="images/A9.jpg" alt="صورة 9">
+                <div class="product-info">
+                    <div class="product-title">كوب الزهور الزرقاء الملكية</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 38</span>
+                        <span class="old-price">₪ 50</span>
+                    </div>
+                    <select class="color-select" id="color-9">
+                        <option value="أزرق ملكي أنيق">اللون: أزرق ملكي أنيق</option>
+                        <option value="أبيض منقوش بازرق">اللون: أبيض منقوش بازرق</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('كوب الزهور الزرقاء الملكية', 38, 'color-9')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('كوب الزهور الزرقاء الملكية', 38, 'color-9')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 10 -->
+            <div class="product-card" data-name="كوب الفيونكة الكورية اللطيفة">
+                <img src="images/A10.jpg" alt="صورة 10">
+                <div class="product-info">
+                    <div class="product-title">كوب الفيونكة الكورية اللطيفة</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 40</span>
+                        <span class="old-price">₪ 52</span>
+                    </div>
+                    <select class="color-select" id="color-10">
+                        <option value="سكري بفيونكة وردية">اللون: سكري بفيونكة وردية</option>
+                        <option value="زهري بفيونكة بيضاء">اللون: زهري بفيونكة بيضاء</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('كوب الفيونكة الكورية اللطيفة', 40, 'color-10')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('كوب الفيونكة الكورية اللطيفة', 40, 'color-10')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 11 -->
+            <div class="product-card" data-name="كوب البولكا دوت الملون">
+                <img src="images/A11.jpg" alt="صورة 11">
+                <div class="product-info">
+                    <div class="product-title">كوب البولكا دوت الملون</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 32</span>
+                        <span class="old-price">₪ 42</span>
+                    </div>
+                    <select class="color-select" id="color-11">
+                        <option value="نقاط ملونة مبهجة">اللون: نقاط ملونة مبهجة</option>
+                        <option value="نقاط وردية رقيقة">اللون: نقاط وردية رقيقة</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('كوب البولكا دوت الملون', 32, 'color-11')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('كوب البولكا دوت الملون', 32, 'color-11')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 12 -->
+            <div class="product-card" data-name="كوب الفراولة المربعات الفاخر">
+                <img src="images/A12.jpg" alt="صورة 12">
+                <div class="product-info">
+                    <div class="product-title">كوب الفراولة المربعات الفاخر</div>
+                    <div class="product-price-box">
+                        <span class="product-price">₪ 45</span>
+                        <span class="old-price">₪ 60</span>
+                    </div>
+                    <select class="color-select" id="color-12">
+                        <option value="مربعات وردية بفراولة">اللون: مربعات وردية بفراولة</option>
+                        <option value="أبيض كلاسيكي بفراولة">اللون: أبيض كلاسيكي بفراولة</option>
+                    </select>
+                    <div class="card-buttons">
+                        <button class="add-to-cart-btn" onclick="addToCart('كوب الفراولة المربعات الفاخر', 45, 'color-12')">أضف إلى السلة 🛍️</button>
+                        <button class="fast-whatsapp-btn" onclick="fastBuy('كوب الفراولة المربعات الفاخر', 45, 'color-12')">⚡ اطلبيها فوراً واتساب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم العناية بالكوب والآراء -->
+    <div class="info-sections">
+        <div class="info-card" id="tips-section">
+            <h3>☕ كيف تحافظين على كوبكِ لفترة أطول؟</h3>
+            <ul>
+                <li><strong>الغسيل اليدوي:</strong> يفضل غسل الكوب يدوياً بماء فاتر وإسفنجة ناعمة للحفاظ على لمعان الرسمات.</li>
+                <li><strong>تجنب المنظفات الخشنة:</strong> الابتعاد عن استخدام الألياف المعدنية القوية لضمان حماية الطبقة الخارجية.</li>
+                <li><strong>الحرارة المناسبة:</strong> الكوب مصمم خصيصاً ليتحمل المشروبات الساخنة والباردة بكفاءة وأمان تام.</li>
+                <li><strong>التخزين الآمن:</strong> احفظي الكوب في مكان جاف ومخصص بعيداً عن الصدمات القوية ليدوم طويلاً كأنّه جديد.</li>
+            </ul>
+        </div>
+
+        <div class="info-card" id="reviews-section">
+            <h3>🤍 آراء عميلاتنا المميزات</h3>
+            <div class="review-box">
+                "الأكواب أجمل بكثير على الطبيعة، التغليف بيجنن والتعامل راقي جداً شكراً ليم بوتيك!"
+                <div class="review-author">- رزان م. (القدس) ⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-box">
+                "وصل الطلب بسرعة، والكوب مع رسالة الصباح اللي جرسها بيفتح النفس! أبداع حقيقي."
+                <div class="review-author">- سارة ع. (رام الله) ⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم التواصل الاجتماعي -->
+    <div class="social-section">
+        <h3>✨ تواصلوا معنا واكتشفوا جديدنا عبر منصاتنا ✨</h3>
+        <div class="social-links">
+            <a href="https://wa.me/972547848314" class="social-btn" target="_blank">💬 واتساب المتجر</a>
+            <a href="https://instagram.com" class="social-btn" target="_blank">📸 إنستغرام Leem Boutique</a>
+            <a href="https://tiktok.com" class="social-btn" target="_blank">🎵 تيك توك المتجر</a>
+        </div>
+    </div>
+
+    <!-- نافذة السلة -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <h3>🛒 سلة المشتريات</h3>
+            <div id="cartItemsList" class="cart-items-list">السلة فارغة حالياً.</div>
+            <div style="font-weight: bold; margin-bottom: 12px; text-align: left; color: var(--primary-color);">المجموع الكلي: <span id="cartTotal">0</span> ₪</div>
+            <button class="whatsapp-btn" onclick="sendToWhatsApp()">إرسال الطلب عبر الواتساب 💚</button>
+            <button class="close-modal" onclick="toggleCart()">إغلاق</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Leem Boutique © 2026 | القدس - فلسطين | للتواصل: 972547848314+</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function showToast() {
+            let x = document.getElementById("toast");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+        function addToCart(name, price, selectId) {
+            const colorSelect = document.getElementById(selectId);
+            const selectedColor = colorSelect ? colorSelect.value : "افتراضي";
+            
+            cart.push({ name, price, color: selectedColor });
+            updateCartCount();
+            showToast();
+        }
+
+        function fastBuy(name, price, selectId) {
+            const colorSelect = document.getElementById(selectId);
+            const selectedColor = colorSelect ? colorSelect.value : "افتراضي";
+            
+            let message = `مرحباً، أود طلب هذا المنتج فوراً:\n- ${name}\n- اللون: ${selectedColor}\n- السعر: ${price} ₪\n\n💌 ملاحظة: في انتظار رسالة المفاجأة الدافئة منكم مع الطلب!`;
+            let phone = "972547848314";
+            let encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
+        }
+
+        function updateCartCount() {
+            document.getElementById('cart-count').innerText = cart.length;
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cartModal');
+            if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'flex';
+                displayCartItems();
+            }
+        }
+
+        function displayCartItems() {
+            const listDiv = document.getElementById('cartItemsList');
+            const totalSpan = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                listDiv.innerHTML = "السلة فارغة حالياً.";
+                totalSpan.innerText = "0";
+                return;
+            }
+
+            let html = "";
+            let total = 0;
+            cart.forEach((item, index) => {
+                html += `<div>${index + 1}. ${item.name} (${item.color}) - ${item.price} ₪</div>`;
+                total += item.price;
+            });
+
+            listDiv.innerHTML = html;
+            totalSpan.innerText = total;
+        }
+
+        function sendToWhatsApp() {
+            if (cart.length === 0) {
+                alert("السلة فارغة! أضيفي منتجات أولاً.");
+                return;
+            }
+
+            let message = "مرحباً، أود طلب المنتجات التالية من Leem Boutique:\n\n";
+            let total = 0;
+            cart.forEach((item, index) => {
+                message += `${index + 1}- ${item.name} | اللون: ${item.color} (${item.price} ₪)\n`;
+                total += item.price;
+            });
+            message += `\nالمجموع الكلي: ${total} ₪\n\n💌 ملاحظة: في انتظار رسالة المفاجأة الدافئة منكم مع الطلب!`;
+
+            let phone = "972547848314";
+            let encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
+        }
+
+        function searchProducts() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('product-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let name = cards[i].getAttribute('data-name').toLowerCase();
+                if (name.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
